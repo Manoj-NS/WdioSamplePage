@@ -49,20 +49,6 @@ describe('SamplePage', ()=>{
         console.log('Option Texts:', optionTexts);
         console.log('Option Values:', optionValues);
 
-        /*
-        const optionTexts = [];
-        const optionValues = [];
-
-        for (const option of options) {
-            const text = await option.getText();
-            const value = await option.getAttribute('value');
-            optionTexts.push(text);
-            optionValues.push(value);
-        }
-
-console.log('Option Texts:', optionTexts);
-console.log('Option Values:', optionValues);
-*/
     //    await dropdownElement.scrollIntoView();
         
     //    await dropdownElement.click();
@@ -80,6 +66,23 @@ console.log('Option Values:', optionValues);
             const cbName= await checkboxName.getText();
             await expect(cbName).toBe('Expertise :');
 
-            
+
+        const checkboxElement= await $('.grunion-field-wrap grunion-field-checkbox-multiple-wrap');
+           
+            // To Get all option elements 
+                const checkboxOptions= await checkboxElement.$$('.grunion-checkbox-multiple-label checkbox-multiple');
+                    const ckOptions= await checkboxElement.getText();
+  /*          // Extract the text and values of each option
+                const optionTexts = [];
+
+
+                for(const cbOptions of checkboxOptions){
+
+                    const text= await cbOptions.getText();
+                    optionTexts.push(text);
+                }
+*/
+                console.log('Available Checkboxes: ', ckOptions);
+
     })
 })
